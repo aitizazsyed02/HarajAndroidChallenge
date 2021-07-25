@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appBar_elevation_4dp">4dp</dimen>
+    <dimen name="expandedTitleMarginStart_20dp">20dp</dimen>
+    <dimen name="expandedTitleMarginBottom_Minus20dp">-20dp</dimen>
+
+    <dimen name="contentInsetEnd_0dp">0dp</dimen>
+    <dimen name="contentInsetStart_0dp">0dp</dimen>
+    <dimen name="contentInsetStartWithNavigation_0dp">0dp</dimen>
+
+    <dimen name="layout_height_0dp">0dp</dimen>
+    <dimen name="layout_height_100dp">100dp</dimen>
+
+</resources>
