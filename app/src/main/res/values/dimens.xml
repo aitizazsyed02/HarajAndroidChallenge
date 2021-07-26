@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- for appbar -->
+    <dimen name="appBar_elevation_4dp">4dp</dimen>
+    <dimen name="expandedTitleMarginStart_20dp">20dp</dimen>
+    <dimen name="expandedTitleMarginBottom_Minus20dp">-20dp</dimen>
+
+    <!-- ** for appbar ** -->
+
+
+    <!-- for collapsing toolbar -->
+    <dimen name="contentInsetEnd_0dp">0dp</dimen>
+    <dimen name="contentInsetStart_0dp">0dp</dimen>
+    <dimen name="contentInsetStartWithNavigation_0dp">0dp</dimen>
+
+    <!-- ** for collapsing toolbar ** -->
+
+    <!-- for generic use -->
+    <dimen name="layout_height_0dp">0dp</dimen>
+    <dimen name="layout_height_100dp">100dp</dimen>
+
+    <dimen name="layout_width_0dp">0dp</dimen>
+
+    <dimen name="padding_10dp">10dp</dimen>
+
+    <dimen name="margin_10dp">10dp</dimen>
+
+    <dimen name="cornerRadius_10dp">10dp</dimen>
+
+    <dimen name="cornerSize_10dp">10dp</dimen>
+
+    <dimen name="iconSize_12sp">12sp</dimen>
+
+    <dimen name="textSize_12sp">12sp</dimen>
+
+    <dimen name="strokeWidth_1dp">1dp</dimen>
+
+    <dimen name="insetTop_0dp">0dp</dimen>
+    <dimen name="insetBottom_0dp">0dp</dimen>
+
+    <dimen name="minHeight_0dp">0dp</dimen>
+    <dimen name="minHeight_43dp">43dp</dimen>
+
+    <dimen name="maxHeight_43dp">43dp</dimen>
+
+
+    <dimen name="minWidth_0dp">0dp</dimen>
+    <dimen name="minWidth_43dp">43dp</dimen>
+
+    <dimen name="maxWidth_43dp">43dp</dimen>
+    <!-- ** for generic use ** -->
+
+    <!-- for card view  -->
+    <dimen name="cardElevation_10dp">10dp</dimen>
+
+    <dimen name="contentPadding_10dp">10dp</dimen>
+    <!-- ** for card view ** -->
+
+</resources>

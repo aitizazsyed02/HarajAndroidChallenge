@@ -1,10 +1,42 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
+    <style name="Widget.MyTheme.ActionBar.Primary" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <!--showTitle|-->
+        <item name="displayOptions">showTitle</item>
+        <!--        <item name="homeAsUpIndicator">@drawable/ic_back</item>-->
+        <item name="background">?attr/colorOnPrimary</item>
+        <item name="titleTextColor">?attr/colorOnSurface</item>
     </style>
 
+    <style name="Widget.MyTheme.ActionBar.Primary.NoTitle" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <!--showTitle|-->
+        <item name="displayOptions">homeAsUp</item>
+        <!--        <item name="homeAsUpIndicator">@drawable/ic_back</item>-->
+        <item name="background">@android:color/transparent</item>
+        <item name="titleTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.MyTheme.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/cardElevation_10dp</item>
+        <item name="contentPadding">@dimen/contentPadding_10dp</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+    <style name="Widget.MyTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorSurface</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="iconTint">?attr/colorPrimary</item>
+        <item name="android:insetTop">@dimen/insetTop_0dp</item>
+        <item name="android:insetBottom">@dimen/insetBottom_0dp</item>
+        <item name="android:minHeight">@dimen/minHeight_43dp</item>
+    </style>
+
+    <style name="Widget.MyTheme.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textSize">@dimen/textSize_12sp</item>
+        <item name="android:minWidth">@dimen/minWidth_0dp</item>
+        <item name="android:minHeight">@dimen/minHeight_0dp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconTint">@null</item>
+    </style>
 </resources>

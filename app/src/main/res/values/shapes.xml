@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Shape Appearance for small components like chips, buttons, text fields and FABs-->
+    <style name="ShapeAppearance.MyTheme.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <!--Your custom shape here-->
+    </style>
+
+    <!--Shape Appearance for medium components like cards, alert dialogs-->
+    <style name="ShapeAppearance.MyTheme.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <!--Your custom shape here-->
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/cornerRadius_10dp</item>
+    </style>
+
+    <!--Shape Appearance for large components like side and bottom navigation drawers-->
+    <style name="ShapeAppearance.MyTheme.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <!--Your custom shape here-->
+
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.MyTheme.MaterialCardView" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyTheme.MaterialCardView2" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyTheme.ShapeableImageView" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/cornerRadius_10dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyTheme.MaterialButton" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/cornerRadius_10dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/cornerRadius_10dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyTheme.RoundMaterialButton" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

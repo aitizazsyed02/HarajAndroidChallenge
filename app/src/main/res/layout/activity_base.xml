@@ -15,40 +15,11 @@
         android:fitsSystemWindows="true"
         android:stateListAnimator="@animator/appbar_elevation">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/ctl"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:fitsSystemWindows="true"
-            app:collapsedTitleGravity="center"
-            app:collapsedTitleTextAppearance="?attr/colorOnSurface"
-            app:expandedTitleGravity="start"
-            app:expandedTitleMarginBottom="@dimen/expandedTitleMarginBottom_Minus20dp"
-            app:expandedTitleMarginStart="@dimen/expandedTitleMarginStart_20dp"
-            app:expandedTitleTextAppearance="?attr/colorOnSurface"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:statusBarScrim="@android:color/transparent"
-            app:toolbarId="@+id/mt">
-
-            <View
-                android:id="@+id/v_space"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/layout_height_100dp"
-                android:background="@android:color/transparent"
-                android:visibility="visible" />
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/mt"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:background="@android:color/transparent"
-                app:contentInsetEnd="@dimen/contentInsetEnd_0dp"
-                app:contentInsetStart="@dimen/contentInsetStart_0dp"
-                app:contentInsetStartWithNavigation="@dimen/contentInsetStartWithNavigation_0dp"
-                app:layout_collapseMode="pin" />
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            android:layout_height="?actionBarSize"
+            android:background="?attr/colorPrimary" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView

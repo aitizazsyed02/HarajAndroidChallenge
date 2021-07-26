@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="purple_200">#bb86fc</color>
+    <color name="purple_500">#6200ee</color>
+    <color name="purple_600">#4b01d0</color>
+    <color name="purple_700">#3700b3</color>
+    <color name="orange_50">#f8e7e2</color>
+    <color name="orange_100">#ffe0b2</color>
+    <color name="orange_200">#f5af9b</color>
+    <color name="orange_300">#f39074</color>
+    <color name="orange_400">#fc920b</color>
+    <color name="orange_500">#f1643c</color>
+    <color name="orange_600">#e65e38</color>
+    <color name="orange_700">#d85733</color>
+    <color name="orange_900">#ae472a</color>
+    <color name="green_200">#c6f68d</color>
+    <color name="green_500">#75e900</color>
+    <color name="red_50">#ffeaed</color>
+    <color name="red_100">#ffcccf</color>
+    <color name="red_300">#ff8466</color>
+    <color name="red_400">#ff6947</color>
+    <color name="red_600">#ff381f</color>
+    <color name="yellow_50">#fffde5</color>
+    <color name="yellow_700">#ffc400</color>
+    <color name="gray_600">#848482</color>
+    <color name="black_overlay">#75000000</color>
+    <color name="white_overlay">#75FFFFFF</color>
+    <color name="white_50">#ffffff</color>
+    <color name="black_800">#121212</color>
+    <color name="black_900">#000000</color>
+
 </resources>
