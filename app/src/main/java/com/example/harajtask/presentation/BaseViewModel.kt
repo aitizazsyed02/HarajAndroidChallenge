@@ -21,13 +21,13 @@ class BaseViewModel(
 
     private fun setPostList(posts: ListIterator<GetPostsResponseItem>?): List<PostItem> {
         val list: ArrayList<PostItem> = arrayListOf()
-        return when (posts != null) {
+        return when (posts == null) {
             true -> {
                 list
             }
             false -> {
-                val value = 0
-                while (posts?.hasNext() == true) {
+                var value = 0
+                while (posts.hasNext()) {
                     list.add(posts.next().toPostItem(value++))
                 }
                 list

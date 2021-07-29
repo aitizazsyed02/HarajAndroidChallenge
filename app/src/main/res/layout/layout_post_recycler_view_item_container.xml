@@ -3,6 +3,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="postItem"
             type="com.example.harajtask.presentation.post.entities.PostItem" />
@@ -22,18 +24,20 @@
                 android:id="@+id/shapeableImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/layout_height_0dp"
-                android:maxWidth="38dp"
-                android:maxHeight="38dp"
-                android:minWidth="38dp"
-                android:minHeight="38dp"
                 android:layout_marginEnd="@dimen/margin_10dp"
+                android:maxWidth="@dimen/maxWidth_143dp"
+                android:maxHeight="@dimen/maxHeight_143dp"
+                android:minWidth="@dimen/minWidth_143dp"
+                android:minHeight="@dimen/minHeight_143dp"
+                android:scaleType="fitXY"
+                app:error="@{@drawable/ic_broken_image}"
+                app:imageUrl="@{postItem.thumbURL}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/materialTextView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:placeHolder="@{@drawable/ic_broken_image}"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyTheme.ShapeableImageView"
-                app:strokeColor="@android:color/darker_gray"
-                app:strokeWidth="@dimen/strokeWidth_1dp"
                 tools:src="@tools:sample/avatars" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -57,25 +61,10 @@
                 android:layout_width="@dimen/layout_width_0dp"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text="@{postItem.date}"
-                android:textAlignment="gravity"
+                android:textAlignment="viewEnd"
                 android:textAppearance="?attr/textAppearanceBody1"
                 android:textSize="@dimen/textSize_12sp"
-                app:layout_constraintBottom_toTopOf="@id/materialTextView3"
-                app:layout_constraintEnd_toEndOf="@id/materialTextView"
-                app:layout_constraintStart_toStartOf="@id/materialTextView"
-                app:layout_constraintTop_toBottomOf="@id/materialTextView"
-                tools:text="@tools:sample/lorem" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/materialTextView3"
-                android:layout_width="@dimen/layout_width_0dp"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:text="@{String.valueOf(postItem.commentCount)}"
-                android:textAlignment="viewStart"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textSize="@dimen/textSize_12sp"
+                app:dateText="@{postItem.date}"
                 app:layout_constraintBottom_toTopOf="@id/materialButton"
                 app:layout_constraintEnd_toEndOf="@id/materialTextView"
                 app:layout_constraintStart_toStartOf="@id/materialTextView"
@@ -85,22 +74,38 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/materialButton"
                 style="@style/Widget.MyTheme.Button.TextButton"
-                android:layout_width="@dimen/layout_width_0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:singleLine="true"
-                android:text="@{postItem.city}"
-                android:textAlignment="viewStart"
+                android:text="@{'('+String.valueOf(postItem.commentCount)+')'}"
                 android:textAppearance="?attr/textAppearanceBody1"
-                app:icon="@drawable/ic_location"
-                app:iconGravity="textEnd"
-                app:iconSize="@dimen/iconSize_12sp"
-                app:layout_constraintBottom_toBottomOf="@id/shapeableImageView"
-                app:layout_constraintEnd_toStartOf="@id/materialButton2"
-                app:layout_constraintHorizontal_weight="1"
+                android:visibility="@{postItem.commentCount==0? View.INVISIBLE : View.VISIBLE}"
+                app:icon="@drawable/ic_comment"
+                app:iconGravity="end"
+                app:iconSize="@dimen/iconSize_12dp"
+                app:iconTint="@android:color/darker_gray"
+                app:layout_constraintBottom_toTopOf="@id/materialButton2"
+                app:layout_constraintEnd_toEndOf="@id/materialTextView"
+                app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toStartOf="@id/materialTextView"
-                app:layout_constraintTop_toBottomOf="@id/materialTextView3"
+                app:layout_constraintTop_toBottomOf="@id/materialTextView2"
                 tools:text="@tools:sample/lorem" />
+
+            <!--            <com.google.android.material.textview.MaterialTextView-->
+            <!--                android:id="@+id/materialTextView3"-->
+            <!--                android:layout_width="@dimen/layout_width_0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:singleLine="true"-->
+            <!--                android:text="@{String.valueOf(postItem.commentCount)}"-->
+            <!--                android:textAlignment="viewStart"-->
+            <!--                android:textAppearance="?attr/textAppearanceBody1"-->
+            <!--                android:textSize="@dimen/textSize_12sp"-->
+            <!--                app:layout_constraintBottom_toTopOf="@id/materialButton"-->
+            <!--                app:layout_constraintEnd_toEndOf="@id/materialTextView"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/materialTextView"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/materialTextView"-->
+            <!--                tools:text="@tools:sample/lorem" />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/materialButton2"
@@ -109,18 +114,39 @@
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:singleLine="true"
-                android:text="@{postItem.username}"
+                android:text="@{postItem.city}"
+                android:textAppearance="?attr/textAppearanceBody1"
+                app:icon="@drawable/ic_location"
+                app:iconGravity="textEnd"
+                app:iconSize="@dimen/iconSize_12dp"
+                app:iconTint="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@id/shapeableImageView"
+                app:layout_constraintEnd_toStartOf="@id/materialButton3"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/materialTextView"
+                app:layout_constraintTop_toBottomOf="@id/materialButton"
+                tools:text="@tools:sample/lorem" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton3"
+                style="@style/Widget.MyTheme.Button.TextButton"
+                android:layout_width="@dimen/layout_width_0dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:singleLine="true"
                 android:textAlignment="viewEnd"
+                android:text="@{postItem.username}"
                 android:textAppearance="?attr/textAppearanceBody1"
                 android:textColor="?attr/colorOnSurface"
                 app:icon="@drawable/ic_user"
-                app:iconGravity="textEnd"
-                app:iconSize="@dimen/iconSize_12sp"
-                app:layout_constraintBottom_toBottomOf="@id/materialButton"
+                app:iconGravity="end"
+                app:iconSize="@dimen/iconSize_12dp"
+                app:iconTint="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@id/materialButton2"
                 app:layout_constraintEnd_toEndOf="@id/materialTextView"
                 app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toEndOf="@id/materialButton"
-                app:layout_constraintTop_toTopOf="@id/materialButton"
+                app:layout_constraintStart_toEndOf="@id/materialButton2"
+                app:layout_constraintTop_toTopOf="@id/materialButton2"
                 tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

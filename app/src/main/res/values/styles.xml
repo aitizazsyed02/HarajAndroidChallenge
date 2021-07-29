@@ -32,6 +32,7 @@
     </style>
 
     <style name="Widget.MyTheme.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:inset">@dimen/inset_0dp</item>
         <item name="android:textSize">@dimen/textSize_12sp</item>
         <item name="android:minWidth">@dimen/minWidth_0dp</item>
         <item name="android:minHeight">@dimen/minHeight_0dp</item>

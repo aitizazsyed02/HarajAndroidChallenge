@@ -29,25 +29,32 @@
 
     <dimen name="cornerSize_10dp">10dp</dimen>
 
-    <dimen name="iconSize_12sp">12sp</dimen>
+    <dimen name="iconSize_12dp">12dp</dimen>
 
     <dimen name="textSize_12sp">12sp</dimen>
 
     <dimen name="strokeWidth_1dp">1dp</dimen>
 
+    <dimen name="inset_0dp">0dp</dimen>
     <dimen name="insetTop_0dp">0dp</dimen>
+    <dimen name="insetLeft_0dp">0dp</dimen>
+    <dimen name="insetRight_0dp">0dp</dimen>
     <dimen name="insetBottom_0dp">0dp</dimen>
 
     <dimen name="minHeight_0dp">0dp</dimen>
     <dimen name="minHeight_43dp">43dp</dimen>
+    <dimen name="minHeight_143dp">143dp</dimen>
 
     <dimen name="maxHeight_43dp">43dp</dimen>
+    <dimen name="maxHeight_143dp">143dp</dimen>
 
 
     <dimen name="minWidth_0dp">0dp</dimen>
     <dimen name="minWidth_43dp">43dp</dimen>
+    <dimen name="minWidth_143dp">143dp</dimen>
 
     <dimen name="maxWidth_43dp">43dp</dimen>
+    <dimen name="maxWidth_143dp">143dp</dimen>
     <!-- ** for generic use ** -->
 
     <!-- for card view  -->
