@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/postFragment"
         android:name="com.example.harajtask.presentation.post.ui.PostFragment"
-        android:label="fragment_post"
+        android:label="Posts"
         tools:layout="@layout/fragment_post" >
         <action
             android:id="@+id/action_postFragment_to_postDetailFragment"
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/postDetailFragment"
         android:name="com.example.harajtask.presentation.postDetail.ui.PostDetailFragment"
-        android:label="fragment_post_detail"
+        android:label="Post Detail"
         tools:layout="@layout/fragment_post_detail" />
 </navigation>

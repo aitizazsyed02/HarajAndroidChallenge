@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="?attr/colorOnPrimary"
-        android:fitsSystemWindows="true"
-        android:stateListAnimator="@animator/appbar_elevation">
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/mt"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="?attr/colorPrimary" />
+            android:background="?attr/colorOnPrimary"
+            app:navigationIconTint="@android:color/darker_gray"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -37,10 +37,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/layout_height_0dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/base_navigation_graph" />
 
     </androidx.core.widget.NestedScrollView>

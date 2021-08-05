@@ -2,6 +2,8 @@ package com.example.harajtask.presentation.post.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -11,7 +13,7 @@ import com.example.harajtask.presentation.post.entities.PostItem
 
 class PostAdapter(
     val event: MutableLiveData<PostItemEvent> = MutableLiveData()
-) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+) : RecyclerView.Adapter<PostAdapter.PostViewHolder>(), Filterable {
 
     private val callback = object : DiffUtil.ItemCallback<PostItem>() {
 
@@ -68,6 +70,28 @@ class PostAdapter(
 
     override fun getItemCount(): Int {
         return differ.currentList.size
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(text: CharSequence): FilterResults {
+                return FilterResults().apply {
+                    if (text.isEmpty()) {
+                        differ.currentList
+                    } else {
+                        differ.currentList.filter {
+                            (it.title.contains(text.toString())) or (it.username.contains(text.toString()))
+                        }
+
+                    }
+                }
+            }
+
+            override fun publishResults(text: CharSequence, result: FilterResults?) {
+                submitList(result?.values as List<PostItem>)
+            }
+
+        }
     }
 
     fun submitList(list: List<PostItem>) {

@@ -6,7 +6,8 @@
     <item
         android:id="@+id/action_search"
         android:checkable="true"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         android:icon="@drawable/ic_search"
         android:title="@null"
-        app:showAsAction="always" />
+        app:showAsAction="always|collapseActionView" />
 </menu>

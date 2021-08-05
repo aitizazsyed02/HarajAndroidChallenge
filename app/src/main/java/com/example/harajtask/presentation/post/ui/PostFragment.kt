@@ -6,6 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +32,7 @@ class PostFragment : Fragment(R.layout.fragment_post) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentPostBinding.bind(view)
+
         setHasOptionsMenu(true)
         initRecyclerViews()
         onGetPosts()
@@ -55,7 +57,7 @@ class PostFragment : Fragment(R.layout.fragment_post) {
                 postAdapter.event.observe(viewLifecycleOwner, Observer {
                     when (it) {
                         is PostItemEvent.OnPostItemClick -> {
-                          requireActivity().toast("${it.postItem}")
+                            requireActivity().toast("${it.postItem}")
                         }
                     }
                 })
@@ -63,17 +65,36 @@ class PostFragment : Fragment(R.layout.fragment_post) {
         }
     }
 
-    private fun onGetPosts(){
+    private fun onGetPosts() {
         viewModel.apply {
-            getPosts().observe(viewLifecycleOwner, Observer { list->
+            getPosts().observe(viewLifecycleOwner, Observer { list ->
                 postAdapter.submitList(list)
             })
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.post_toolbar_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.post_toolbar_menu, menu)
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView =
+            searchItem.actionView as SearchView
+        searchView.maxWidth = Integer.MAX_VALUE
+
+        searchView.setOnQueryTextFocusChangeListener(object : SearchView.OnQueryTextListener,
+            View.OnFocusChangeListener {
+            override fun onQueryTextSubmit(text: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(text: String?): Boolean {
+                postAdapter.filter.filter(text)
+                return true
+            }
+
+            override fun onFocusChange(view: View?, state: Boolean) {
+            }
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
